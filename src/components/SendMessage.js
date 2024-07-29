@@ -4,12 +4,12 @@ import { auth, db } from "../firebase";
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 
 const SendMessage = () => {
+  
   const [message, setMessage] = useState("");
     
   return (
     <form className="send-message">
       <input
-        ...
         value={message}
         onChange={(e) => setMessage(e.target.value)}
       />
@@ -19,6 +19,7 @@ const SendMessage = () => {
 };
 
 const sendMessage = async (event) => {
+  scroll.current.scrollIntoView({ behavior: "smooth" })
   event.preventDefault();
   if (message.trim() === "") {
     alert("Enter valid message");
@@ -37,5 +38,5 @@ const sendMessage = async (event) => {
 
 return (
   <form onSubmit={(event) => sendMessage(event)} className="send-message">
-...
+
 export default SendMessage;
