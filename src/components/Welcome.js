@@ -6,8 +6,7 @@ import { GoogleAuthProvider, signInWithRedirect } from "firebase/auth";
 const googleSignIn = () => {
   const provider = new GoogleAuthProvider();
   signInWithRedirect(auth, provider);
-};
-
+  
   return (
     <main className="welcome">
       <h2>Welcome to Quick Chat.</h2>
@@ -24,5 +23,7 @@ const googleSignIn = () => {
     </main>
   );
 };
+  
+  
 
 export default Welcome;

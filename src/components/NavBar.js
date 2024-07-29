@@ -15,7 +15,7 @@ const NavBar = () => {
     auth.signOut();
   };
 
-  const signOut = () => {
+  const SignOut = () => {
     setUser(false);
   };
 

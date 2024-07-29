@@ -1,4 +1,3 @@
-import React from "react";
 import React, { useState } from "react";
 import { auth, db } from "../firebase";
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
@@ -35,8 +34,4 @@ const sendMessage = async (event) => {
   });
   setMessage("");
 };
-
-return (
-  <form onSubmit={(event) => sendMessage(event)} className="send-message">
-
 export default SendMessage;
