@@ -1,22 +1,23 @@
-import React, { useState } from "react";
+import React from "react";
 import { auth } from "../firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { GoogleAuthProvider, signInWithRedirect } from "firebase/auth";
 import GoogleSignin from "../img/btn_google_signin_dark_pressed_web.png";
 
 const NavBar = () => {
-  const [user, setUser] = useAuthState(auth);
+  const [user] = useAuthState(auth);
 
   const googleSignIn = () => {
     const provider = new GoogleAuthProvider();
-    signInWithRedirect(auth, provider);
-  };
-  const signOut = () => {
-    auth.signOut();
+    signInWithRedirect(auth, provider).catch(error => {
+      console.error("Error signing in with Google:", error);
+    });
   };
 
-  const SignOut = () => {
-    setUser(false);
+  const signOut = () => {
+    auth.signOut().catch(error => {
+      console.error("Error signing out:", error);
+    });
   };
 
   return (
@@ -27,9 +28,8 @@ const NavBar = () => {
           Sign Out
         </button>
       ) : (
-        <button className="sign-in">
+        <button className="sign-in" onClick={googleSignIn}>
           <img
-            onClick={googleSignIn}
             src={GoogleSignin}
             alt="Sign in with Google"
             type="button"
