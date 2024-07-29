@@ -18,13 +18,14 @@ const Welcome = () => {
       <h2>Welcome to Quick Chat.</h2>
       <img src="/logo512.png" alt="ReactJs logo" width={50} height={50} />
       <p>Sign in with Google to chat with everyone.</p>
-      <button className="sign-in" onClick={signInWithGoogle}>
-        <img
-          src={GoogleSignin}
-          alt="sign in with google"
-          type="button"
-        />
-      </button>
+      <button className="sign-in" onClick={googleSignIn}>
+  <img
+    src={GoogleSignin}
+    alt="Sign in with Google"
+    type="button"
+  />
+</button>
+
     </main>
   );
 };
