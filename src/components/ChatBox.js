@@ -2,6 +2,7 @@ import React from "react";
 import Message from "./Message";
 import SendMessage from "./SendMessage";
 
+const [user] = useAuthState(auth);
 const ChatBox = () => {
   return (
     <main className="chat-box">

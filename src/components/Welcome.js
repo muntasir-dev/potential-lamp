@@ -1,7 +1,6 @@
 import React from "react";
 import GoogleSignin from "../img/btn_google_signin_dark_pressed_web.png";
 
-const [user] = useAuthState(auth);
 const Welcome = () => {
   const googleSignIn = () => {
   };
